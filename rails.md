@@ -7,7 +7,7 @@ Macを使っていることを前提とします。
 黒い画面に慣れましょう。oh-my-zshでちょっと便利にしておきます。
 
 * 参考
-	* http://qiita.com/udzura/items/0d08d71d809bfd8c5981
+	* [Mac OS X で zsh ＋ oh-my-zsh の環境を作って一通り設定するまで](http://qiita.com/udzura/items/0d08d71d809bfd8c5981)
 
 ## Vimを使う
 まずは開発に使うエディタを設定します。おすすめはVimです。Sublime Textもメジャーですが、リモートサーバにログインした時に使えないので、Vimに慣れておくのがおすすめです。
@@ -72,15 +72,35 @@ Railsについて学ぶ前に軽量フレームワークのSinatraに触れて�
 
 Githubを用いて開発を進めるにあたってWIPのプルリクエストとGithub-Flowの考え方に則ります。下記URLの流れにそって開発を進めてください。
 
-http://qiita.com/sue738/items/09d9292e7654747ca208
+* 参考
+	* [初心者向けWIPワークフロー&レビュー時の注意](http://qiita.com/sue738/items/09d9292e7654747ca208)
 
-## 考え方
+## Railsにおける大事な考え方
+
 * DRY
 	* Don't Repeat Yourself.
 	* 3回同じコードを書いたら共通化する
 * CoC
 	* Convention over Configuration 
 	* 設定より規約
+* REST
+	* Representational State Transfer
+	* リソースとURLの1対1対応。操作はHTTPのメソッドを使う
 * YAGNI
 	* You ain't gonna need it
 	* 機能は実際に必要となるまでは追加しない
+
+## Sandi Metzルール
+
+### 綺麗な設計を身に付けるためのSandi Metzルール
+
+	* クラス内のコードが100行を超えてはならない
+	* メソッド内のコードが5行を超えてはならない
+	* 4つより多い引数をメソッドに渡すようにしてはならない（ハッシュによるオプションもパラメーターとみなす）
+	* コントローラーではただ1つのオブジェクトだけをインスタンス変数化できるビューは1つのインスタンス変数を参照し、そのオブジェクトに対するメッセージ送信のみを行うことができる（@object.collaborator.valueは許可されない）
+
+### ルールを破っても良い例
+	* 適切な理由があると考えられる場合
+	* ペアプログラミングのパートナーやコードレビュアーが許可した場合
+
+参考：http://tech.a-listers.jp/2013/05/20/sandi-metz/
